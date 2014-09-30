@@ -28,16 +28,26 @@ namespace _1DV402.S2.L1A
         {
             if (_count < MaxNumberOfGuesses)
             {
+                if (number < 1)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                if (number > 100)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                
                 if (number < _number)
                 {
-                    Console.WriteLine("{0} är för lågt. Du har {1} gissningar kvar", number, (MaxNumberOfGuesses - _count));
                     _count = _count + 1;
+                    Console.WriteLine("{0} är för lågt. Du har {1} gissningar kvar", number, (MaxNumberOfGuesses - _count));                    
                     return false;
                 }
                 else if (number > _number)
                 {
-                    Console.WriteLine("{0} är för högt. Du har {1} gissningar kvar", number, (MaxNumberOfGuesses - _count));
                     _count = _count + 1;
+                    Console.WriteLine("{0} är för högt. Du har {1} gissningar kvar", number, (MaxNumberOfGuesses - _count));                    
                     return false;
                 }
                 else
@@ -47,7 +57,7 @@ namespace _1DV402.S2.L1A
                 }
             }
             else
-            {
+            {                
                 throw new ApplicationException();
             }
         }
