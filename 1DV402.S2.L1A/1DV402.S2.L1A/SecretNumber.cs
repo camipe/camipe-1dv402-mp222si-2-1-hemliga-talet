@@ -46,7 +46,7 @@ namespace _1DV402.S2.L1A
                 Console.WriteLine("{0} är för lågt. Du har {1} gissningar kvar", number, (MaxNumberOfGuesses - _count));
                 if (_count == MaxNumberOfGuesses)
                 {
-                    Console.WriteLine("Det hemliga talet är:", _number);
+                    Console.WriteLine("Det hemliga talet är: {0}", _number);
                 }    
                 return false;
             }
